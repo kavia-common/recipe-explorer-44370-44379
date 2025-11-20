@@ -16,8 +16,17 @@ import { TagChipsComponent } from '../tag-chips/tag-chips.component';
 })
 export class RecipeCardComponent {
   @Input() recipe!: Recipe;
+  imageSrc: string = '';
 
   constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.imageSrc = this.recipe.imageUrl || 'assets/fallback-recipe.jpg';
+  }
+
+  onImgError(event: any) {
+    this.imageSrc = 'assets/fallback-recipe.jpg';
+  }
 
   onCardClick() {
     if (this.recipe) {

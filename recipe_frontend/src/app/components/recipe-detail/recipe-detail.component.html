@@ -2,7 +2,11 @@
   <section class="recipe-detail-card card">
     <button class="button" style="margin-bottom:1.1rem;" (click)="goBack()">&#8592; Back</button>
     <div class="hero">
-      <img [src]="recipe.imageUrl" [alt]="recipe.title" />
+      <img 
+        [src]="imageSrc" 
+        [alt]="recipe.title" 
+        (error)="onImgError($event)" 
+        />
     </div>
     <div class="main-content">
       <h1>{{ recipe.title }}</h1>

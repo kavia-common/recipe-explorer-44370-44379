@@ -16,6 +16,7 @@ import { Recipe } from '../../models/recipe.model';
 export class RecipeDetailComponent {
   recipe?: Recipe;
   notFound = false;
+  imageSrc: string = 'assets/fallback-recipe.jpg';
 
   constructor(
     private route: ActivatedRoute,
@@ -26,14 +27,24 @@ export class RecipeDetailComponent {
     if (id) {
       this.recipeService.getRecipeById(id).subscribe(
         (r) => {
-          if (!r) this.notFound = true;
+          if (!r) {
+            this.notFound = true;
+            this.imageSrc = 'assets/fallback-recipe.jpg';
+          }
           this.recipe = r;
+          if (r?.imageUrl) {
+            this.imageSrc = r.imageUrl;
+          }
         },
-        () => { this.notFound = true; }
+        () => { this.notFound = true; this.imageSrc = 'assets/fallback-recipe.jpg'; }
       );
     } else {
       this.notFound = true;
     }
+  }
+
+  onImgError(event: any) {
+    this.imageSrc = 'assets/fallback-recipe.jpg';
   }
 
   goBack() {
