@@ -1,0 +1,19 @@
+<div style="margin-bottom: 1.7rem;">
+  <app-search-bar (search)="onSearch($event)"></app-search-bar>
+</div>
+<div style="margin-bottom: 1.2rem;">
+  <app-tag-chips
+    [tags]="allTags"
+    [selectedTags]="selectedTags"
+    (toggle)="onTagToggle($event)">
+  </app-tag-chips>
+</div>
+<section class="recipe-grid">
+  <app-recipe-card
+    *ngFor="let recipe of filtered"
+    [recipe]="recipe">
+  </app-recipe-card>
+  <div *ngIf="filtered.length === 0" class="empty-msg">
+    <span>No recipes found with the selected filters.</span>
+  </div>
+</section>

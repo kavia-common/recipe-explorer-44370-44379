@@ -1,0 +1,12 @@
+<article class="card item-card" (click)="onCardClick()" tabindex="0">
+  <figure *ngIf="recipe.imageUrl" class="thumb">
+    <img [src]="recipe.imageUrl" [alt]="recipe.title" loading="lazy"/>
+  </figure>
+  <div class="card-content">
+    <h3 class="title">{{ recipe.title }}</h3>
+    <span class="desc">{{ recipe.description }}</span>
+    <div class="tags">
+      <app-tag-chips [tags]="recipe.tags"></app-tag-chips>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,42 @@
+<ng-container *ngIf="recipe; else notFoundBlock">
+  <section class="recipe-detail-card card">
+    <button class="button" style="margin-bottom:1.1rem;" (click)="goBack()">&#8592; Back</button>
+    <div class="hero">
+      <img [src]="recipe.imageUrl" [alt]="recipe.title" />
+    </div>
+    <div class="main-content">
+      <h1>{{ recipe.title }}</h1>
+      <span class="desc">{{ recipe.description }}</span>
+      <div class="meta">
+        <span *ngIf="recipe.timeMinutes">&#128336; {{ recipe.timeMinutes }} min</span>
+        <span *ngIf="recipe.servings">&#128101; {{ recipe.servings }} servings</span>
+      </div>
+      <div class="tags" style="margin:0.8em 0 1.3em 0;">
+        <app-tag-chips [tags]="recipe.tags"></app-tag-chips>
+      </div>
+      <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients">
+            <label>
+              <input type="checkbox" [(ngModel)]="ingredient.checked" (change)="toggleIngredient(ingredient)" />
+              <span>{{ ingredient.quantity ? ingredient.quantity + ' ' : '' }}{{ ingredient.name }}</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="steps">
+        <h2>Method</h2>
+        <ol>
+          <li *ngFor="let step of recipe.steps">
+            {{ step }}
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</ng-container>
+<ng-template #notFoundBlock>
+  <p class="not-found">Recipe not found.</p>
+  <button class="button" (click)="goBack()">Back</button>
+</ng-template>

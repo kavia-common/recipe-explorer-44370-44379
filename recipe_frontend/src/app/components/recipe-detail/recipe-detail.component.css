@@ -1,0 +1,92 @@
+.recipe-detail-card {
+  padding: 2.2em 2.5em;
+  max-width: 670px;
+  margin: 2em auto;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.hero {
+  width: 100%;
+  margin-bottom: 1.6em;
+}
+.hero img {
+  width: 100%;
+  height: 260px;
+  border-radius: 0.7rem;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.main-content h1 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 0.45em;
+  font-weight: 700;
+}
+.meta {
+  color: #64748b;
+  font-size: 1.04em;
+  margin-bottom: 0.6em;
+  display: flex;
+  gap: 1em;
+}
+
+.desc {
+  color: #334155;
+  font-size: 1.07rem;
+  margin-bottom: 0.8em;
+}
+
+.ingredients h2, .steps h2 {
+  color: var(--color-secondary);
+  margin: 1.2em 0 0.4em 0;
+  font-size: 1.22em;
+}
+
+.ingredients ul {
+  padding-left: 0;
+  list-style: none;
+}
+.ingredients li {
+  margin-bottom: 0.3em;
+  font-size: 1.07em;
+}
+.ingredients input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  margin-right: 0.7em;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.steps ol {
+  margin: 0;
+  padding-left: 1.6em;
+}
+.steps li {
+  margin-bottom: 0.5em;
+  font-size: 1.05em;
+}
+.button {
+  margin-top: 1.2em;
+}
+.not-found {
+  text-align: center;
+  color: var(--color-error);
+}
+
+@media (max-width: 800px) {
+  .recipe-detail-card {
+    padding: 1.25em 0.5em;
+  }
+  .main-content h1 {
+    font-size: 1.3rem;
+  }
+  .hero img {
+    height: 160px;
+  }
+}

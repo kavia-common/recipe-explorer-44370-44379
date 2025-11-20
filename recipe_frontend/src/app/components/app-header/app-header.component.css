@@ -1,0 +1,16 @@
+.navbar {
+  width: 100vw;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #fff;
+  padding: 1.15em 0 1em 2vw;
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: 2.3em;
+  letter-spacing: 0.015em;
+  border-bottom: 1.5px solid #e5e7eb;
+}
+.app-title {
+  font-size: 1.27em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}

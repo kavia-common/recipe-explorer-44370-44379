@@ -1,0 +1,14 @@
+/* Recipe Grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.empty-msg {
+  grid-column: 1 / -1;
+  color: var(--color-error);
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 1.7em 0;
+}

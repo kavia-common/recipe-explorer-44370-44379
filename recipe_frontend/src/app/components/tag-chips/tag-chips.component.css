@@ -1,0 +1,6 @@
+.chip {
+  @apply chip;
+}
+.chip.selected {
+  @apply chip selected;
+}
